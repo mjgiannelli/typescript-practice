@@ -1,3 +1,16 @@
+// TYPE ALIASES //
+
+    // used to make code as readable as possible
+
+type ID = string;
+type PopularTag = string;
+
+// type alias with union command. can assign a value as a string or null
+type MaybePopularTag = PopularTag | null;
+
+// add the type alias popular tag and say it's an array
+const popularTags: PopularTag[] = ['dragon', 'coffee']
+
 // using 'const' will not let you change the value of a variable
 // using 'let' will let you change the value of the variable but only to the same type of the original variable
 
@@ -19,6 +32,8 @@ console.log(getFullName('Mark', 'Giannelli'))
         // done by adding 'Interface' after the name of the interface
 
     interface UserInterface {
+    // type allias ID is equal to a string per line 5
+    id?: ID;
     name: string;
     age?: number;
     getMessage?(): string;
@@ -52,3 +67,9 @@ interface User2Interface {
 }
 
 let user3: User2Interface | null = null;
+
+    // DO NOT WRITE CODE LIKE THIS
+
+let someProp: string | number | object | [] | boolean | null | undefined
+
+
