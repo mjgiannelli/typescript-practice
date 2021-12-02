@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        // directory where we will store all of our files
+        "rootDir": "./src",
+        // where we will keep all of our JS files for compiling
+        "outDir": "./dist"
+    }
+}
