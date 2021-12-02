@@ -3,16 +3,16 @@
 
 let hello = 'world';
 
-// FUNCTIONS
+// FUNCTIONS //
 
-// have to specify the type of the variable being passed
+    // have to specify the type of the variable being passed
 const getFullName = (name: string, surname: string): string => {
     return name + ' ' + surname;
 }
 
 console.log(getFullName('Mark', 'Giannelli'))
 
-// OBJECTS
+// OBJECTS //
   // interfaces - create objects with specific properties
     // put '?' after key to specify that the property is not mandatory
     // need to separate name of interfaces and classes from each other
@@ -35,3 +35,20 @@ const user: UserInterface = {
 const user2: UserInterface = {
     name: 'Jack',
 }
+
+
+// UNION OPERATORS //
+
+let username: string = 'alex';
+
+    // variable can be a string or numb with a default value of 1
+let pageNumber: string | number = '1';
+
+let errorMessage: string | null = null;
+
+interface User2Interface {
+    name: string
+    surname: string
+}
+
+let user3: User2Interface | null = null;
