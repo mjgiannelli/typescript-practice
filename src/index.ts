@@ -204,3 +204,56 @@ class Admin extends User2 {
 const admin = new Admin('Mark', 'Besos');
 
 console.log(admin);
+
+// GENERICS INTERFACES AND FUNCTIONS //
+
+    // generic type tag given to a function parameter so that the object takes the type of whatever it's key values are. 
+    // use extends to explicity say what type the generic tag should be
+
+const addId = <T extends object>(obj: T) => {
+    const id = Math.random().toString(16)
+    return {
+        ...obj,
+        id
+    }
+}
+
+    // make explicit declarations even if typescript already knows. Makes for more readable code
+
+interface EmployeeInterface {
+    name: string;
+}
+
+const employee: EmployeeInterface = {
+    name: 'Jack'
+}
+
+const result = addId<EmployeeInterface>(employee);
+
+console.log('result: ', result);
+
+
+// GENERICS WITH INTERFACES //
+
+    // can set a property to a generic type, but when creating the new obj, we'll need to make sure we pass in the data type explicitly so our object can be created
+
+interface StaffInterface<T, V> {
+    name: string;
+    data: T;
+    meta: V;
+}
+
+const staffMember: StaffInterface<{meta: string}, string> = {
+    name: 'Jack',
+    data: {
+        meta: 'foo'
+    },
+    meta: 'bar'
+};
+
+const staffMember2: StaffInterface<string[], number> = {
+    name: 'John',
+    data: ['foo', 'bar', 'baz'],
+    meta: 4
+}
+
