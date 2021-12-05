@@ -73,3 +73,41 @@ let user3: User2Interface | null = null;
 let someProp: string | number | object | [] | boolean | null | undefined
 
 
+// VOID DATATYPE //
+
+  // functions that do not return anything are given by default the void datatype. 
+    // vois is a set of undefined and null
+
+const doSomething = (): void => {
+ console.log("doSomething");
+}
+
+// ANY DATATYPE //
+
+    // given a variable the type of any is the same as taking off the typescript checks. DO NOT USE as could be the start of future problems
+let foo: any = 'foo';
+
+// NEVER DATATYPE //
+
+    // code can not have an endpoint. basically a function that never ends according to the video. Not sure why it's useful. Will do a deeper dive
+const doSomethingAgain = (): never => {
+    throw 'never';
+}
+
+// UNKNOWN DATATYPE //
+
+let vAny: any = 10;
+let vUnknown: unknown = 10;
+
+let s1: string = vAny;
+// let s2: string = vUnknown; // cannot assign variable s2 the value of vUnknown because the type is unknown and s2's type is known (string). 
+
+// TYPE ASSERTION //
+
+    // can convert the datatype of a variable with the 'as' keyword. this will make the vUnkown datatype change from unknown to string
+let s2: string = vUnknown as string;
+
+    // when trying to assign a var with number datatype the value of a variable with a string datatype, first need to convert that string datatype to unknown and then convert to a number
+let pageNum: string = '1';
+let numPageNum: number = (pageNum as unknown) as number;
+
