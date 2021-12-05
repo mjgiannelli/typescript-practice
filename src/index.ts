@@ -111,3 +111,17 @@ let s2: string = vUnknown as string;
 let pageNum: string = '1';
 let numPageNum: number = (pageNum as unknown) as number;
 
+
+// TYPESCRIPT WORKING WITH DOM //
+    // each DOM element is automatically given an ambiguous datatype of element, so need to specify which element type you are looking to target
+
+const someElement = document.querySelector('.foo') as HTMLInputElement;
+
+console.log('someElement', someElement)
+
+    // adding an event listener - we need to define the datatype for event.target to access the value property
+
+someElement.addEventListener('click', (event) => {
+    const target = event.target as HTMLInputElement
+    console.log('event', target.value)
+})
