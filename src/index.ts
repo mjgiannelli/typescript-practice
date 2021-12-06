@@ -257,3 +257,41 @@ const staffMember2: StaffInterface<string[], number> = {
     meta: 4
 }
 
+
+// ENUMS //
+
+    // write less by only having to write the keys and each key by default has a value of whatever index it is at in the list. IE) NotStarted is first so it's value is 0
+
+    // can use enum with strings if you use an equals sign
+
+const statuses = {
+    notStarted: 0,
+    inProgress: 1,
+    done: 2
+}
+
+console.log(statuses.inProgress);
+
+// can add 
+
+enum StatusEnum {
+    NotStarted,
+    InProgress,
+    Done,
+    Finished = 'Finished'
+}
+
+let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+
+notStartedStatus = StatusEnum.Done;
+
+console.log(StatusEnum.Finished)
+
+// can use enum as a value and a datatype in an obj
+
+const testObj = {
+    name: 'Mark',
+    status: StatusEnum
+}
+
+console.log(testObj);
